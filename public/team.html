@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vartex Engineering Team &amp; Vartex TeamDesk Portal</title>
+  <meta name="description" content="Connect with the Vartex Engineering leadership team and start secure remote support sessions with Vartex TeamDesk." />
+  <link rel="icon" type="image/png" href="team-assets/teamdesk-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d1b3d;
+      --navy-deep: #09122a;
+      --gold: #c9a54c;
+      --gold-soft: #e2c67a;
+      --bg: #fdfcf8;
+      --fg: #111832;
+      --muted: #5a627a;
+      --border: #e6e7ec;
+      --card: #ffffff;
+      --gold-text: #7a5b16;
+      --shadow: 0 22px 50px -22px rgba(9, 18, 42, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (min-width: 768px) {
+      .container { padding: 0 40px; }
+    }
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(9, 18, 42, 0.97);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hdr-inner {
+      display: flex;
+      height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 9px;
+      object-fit: cover;
+      border: 1px solid rgba(201, 165, 76, 0.4);
+    }
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+    }
+    .brand-sub {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .nav a:hover { color: var(--gold-soft); }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      transition: background 0.15s ease, transform 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-gold:hover { background: var(--gold-soft); }
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-outline-light:hover {
+      border-color: var(--gold);
+      background: rgba(201, 165, 76, 0.12);
+    }
+    .btn-pending {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px dashed rgba(201, 165, 76, 0.45);
+      background: rgba(201, 165, 76, 0.08);
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 11px 18px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(155deg, var(--navy-deep) 0%, #11224a 100%);
+      color: #ffffff;
+      padding: 68px 0 76px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .eyebrow-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(201, 165, 76, 0.14);
+      border: 1px solid rgba(201, 165, 76, 0.35);
+      color: var(--gold-soft);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .hero h1 span { color: var(--gold-soft); }
+    .hero-lead {
+      margin-top: 16px;
+      font-size: 16px;
+      color: rgba(241, 245, 249, 0.85);
+      max-width: 560px;
+    }
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero-meta {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 13px;
+      color: rgba(226, 232, 240, 0.78);
+    }
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-preview {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow);
+      background: #09122a;
+    }
+    /* Sections */
+    .section {
+      padding: 72px 0;
+    }
+    .section-alt {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .section-sub {
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 15px;
+    }
+    /* Steps & Safeguards */
+    .steps-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: var(--gold-soft);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .safeguards-bar {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .safeguard-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .safeguard-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #10b981;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .safeguard-item strong {
+      display: block;
+      font-size: 14px;
+      color: var(--fg);
+    }
+    .safeguard-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    /* Team Grid */
+    .team-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .team-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .team-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 12px 30px -18px rgba(9, 18, 42, 0.25);
+    }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: var(--gold-soft);
+      border: 1px solid rgba(201, 165, 76, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .team-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .team-role {
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold-text);
+    }
+    .team-bio {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .team-footer-note {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px 22px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .link-accent {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 4px;
+    }
+    /* Footer */
+    /* Footer (matches www.vartexengg.com original styling) */
+    .site-footer {
+      background: var(--navy-deep);
+      color: #ffffff;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+    .footer-grid > div {
+      min-width: 0;
+    }
+    .footer-brand-logo {
+      height: 56px;
+      max-height: 56px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .footer-about {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.78);
+      margin-top: 18px;
+      max-width: 420px;
+    }
+    .footer-grid h4 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 16px;
+    }
+    .footer-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-list li {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .footer-list a {
+      color: rgba(255, 255, 255, 0.88);
+      transition: color 0.15s ease;
+    }
+    .footer-list a:hover { color: var(--gold); }
+    .footer-contact {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+    .footer-contact span,
+    .footer-contact a {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .footer-contact svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.88);
+      transition: color 0.15s ease;
+    }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-bottom-inner {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .steps-grid, .safeguards-bar, .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1.2fr;
+        gap: 24px;
+      }
+      .nav { display: none; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container hdr-inner">
+      <a href="#top" class="brand">
+        <img src="team-assets/teamdesk-icon.png" alt="Vartex TeamDesk Logo" />
+        <div>
+          <div class="brand-title">Vartex Engineering</div>
+          <div class="brand-sub">Team &amp; Remote Support Hub</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Section links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#leadership">Engineering Team</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.vartexengg.com" target="_blank" rel="noopener noreferrer">Main Website ↗</a>
+      </nav>
+
+      <a class="btn-gold" href="https://teamdesk.vartexengg.com" target="_blank" rel="noopener noreferrer">
+        Launch Vartex TeamDesk
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow-chip">Vartex Engineering · Remote Support Portal</div>
+          <h1>Fast, Secure Remote Collaboration with <span>Vartex TeamDesk</span></h1>
+          <p class="hero-lead">
+            Connect directly with Vartex Engineering specialists for real-time screen sharing,
+            technical reviews, and user-approved remote desktop support—with zero manual setup scripts.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-gold" href="https://teamdesk.vartexengg.com" target="_blank" rel="noopener noreferrer">
+              Open Web App (teamdesk.vartexengg.com)
+            </a>
+            <span class="btn-pending" title="Microsoft Store certification is currently in progress">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/>
+            </svg>
+            <span>Windows App · Microsoft Store (Coming Soon)</span>
+          </span>
+          </div>
+
+          <div class="hero-meta">
+            <span>✓ Encrypted WSS &amp; WebRTC</span>
+            <span>✓ Explicit Host Approval</span>
+            <span>✓ Visible Tray Exit Anytime</span>
+          </div>
+        </div>
+
+        <div class="hero-preview">
+          <img src="team-assets/teamdesk-preview.png" alt="Vartex TeamDesk Live Screen Sharing Preview" width="1366" height="768" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section section-alt">
+      <div class="container">
+        <p class="section-eyebrow">Quick Start Guide</p>
+        <h2 class="section-title">Start a support session in three simple steps</h2>
+        <p class="section-sub">
+          Designed for engineering clients, project partners, and internal teammates to collaborate
+          safely across locations without complicated installation steps.
+        </p>
+
+        <div class="steps-grid">
+          <article class="card">
+            <div class="step-num">01</div>
+            <h3>Open App or Install</h3>
+            <p>
+              Launch <strong>Vartex TeamDesk</strong> in your browser at
+              <a class="link-accent" href="https://teamdesk.vartexengg.com" target="_blank" rel="noopener noreferrer">teamdesk.vartexengg.com</a>
+              or install the packaged Windows app from the Microsoft Store.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-num">02</div>
+            <h3>Share Your Peer ID</h3>
+            <p>
+              Copy the temporary 9-digit <strong>Peer ID</strong> shown in your session panel and
+              share it directly with your Vartex Engineering specialist or teammate.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-num">03</div>
+            <h3>Approve &amp; Collaborate</h3>
+            <p>
+              Confirm screen sharing and remote control when prompted. Pause remote input or end
+              the session anytime with one click from the system tray.
+            </p>
+          </article>
+        </div>
+
+        <div class="safeguards-bar">
+          <div class="safeguard-item">
+            <div class="safeguard-dot"></div>
+            <div>
+              <strong>No Silent Background Control</strong>
+              <span>Remote mouse and keyboard access activates only after explicit host initiation.</span>
+            </div>
+          </div>
+          <div class="safeguard-item">
+            <div class="safeguard-dot"></div>
+            <div>
+              <strong>End-to-End Encrypted Transport</strong>
+              <span>Signaling, screen video, and session input travel over TLS/HTTPS, WSS, and WebRTC.</span>
+            </div>
+          </div>
+          <div class="safeguard-item">
+            <div class="safeguard-dot"></div>
+            <div>
+              <strong>Instant Pause &amp; Exit</strong>
+              <span>Keep full ownership of your desktop with visible Windows system tray controls.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Engineering Team -->
+    <section id="leadership" class="section">
+      <div class="container">
+        <p class="section-eyebrow">Engineering Leadership</p>
+        <h2 class="section-title">Core team behind Vartex Engineering</h2>
+        <p class="section-sub">
+          Integrated infrastructure consultancy, hospital &amp; MEP systems, and network software
+          engineering leadership serving clients across Bangladesh and internationally.
+        </p>
+
+        <div id="team-grid" class="team-grid">
+          <article class="team-card">
+            <div class="avatar">NQ</div>
+            <div>
+              <h3>Engr. Naeema Quader Khan</h3>
+              <p class="team-role">Chairman | MIEB</p>
+              <p class="team-bio">
+                Mechanical engineering graduate with a strong foundation in thermodynamics, fluid mechanics, and systems engineering. Founded Vartex Engineering to fill a critical gap in dedicated engineering consultancy in Bangladesh, starting with healthcare. Drives company strategy, client partnerships, and professional standards across all service lines.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar">RS</div>
+            <div>
+              <h3>Engr. Reza Shah Mohammad Zillullah</h3>
+              <p class="team-role">Head of Operations | FIEB, Member IAEng.</p>
+              <p class="team-bio">
+                Specialist in Hospital Infrastructure &amp; Biomedical Engineering with 30+ years of experience across Bangladesh, UAE, P.R.China, and DR Congo. Deep expertise in medical gas systems, modular OTs, ICU/NICU/HDU setups, radiology, dialysis centres, and waste management systems, ensuring compliance with WHO, OSHA, and FGI standards.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar">SA</div>
+            <div>
+              <h3>Engr. Dr. Shahriar Mohammad Akramullah</h3>
+              <p class="team-role">Specialist — Network &amp; Software Systems | Intel Corporation | HKUST</p>
+              <p class="team-bio">
+                Software Enabling &amp; Optimization Engineer at Intel Corporation (USA) and alumnus of The Hong Kong University of Science and Technology (HKUST). Author of one book, four US patents, and over ten technical papers; experienced in parallel/distributed processing, cloud media solutions, power/performance modelling, and network &amp; software systems.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar">MH</div>
+            <div>
+              <h3>Engr. Dr. Mahmud Hasan</h3>
+              <p class="team-role">Specialist — Software, Low Voltage &amp; Data Systems | Ph.D. in CS, Western University, Canada</p>
+              <p class="team-bio">
+                Software Architect and Technical Lead with 14+ years of industry and research experience (B.Sc. CSE, CUET; IBM Agile Certified Professional). Currently Software Architect at Tender Retail and formerly with IBM Watson Health Imaging and Align Technology. Advises Vartex on software systems, structured cabling, data networks, IP CCTV, access control, and BMS integration.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="team-footer-note">
+          <span id="team-sync-note">Team profiles stay synchronized with www.vartexengg.com/team.html.</span>
+          <a class="link-accent" href="https://www.vartexengg.com/team.html" target="_blank" rel="noopener noreferrer">
+            View Full Team on vartexengg.com ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img
+          src="team-assets/vartex-logo.png"
+          alt="Vartex Engineering — Validating Your Vision"
+          class="footer-brand-logo"
+        />
+        <p class="footer-about">
+          Specialized healthcare and integrated infrastructure engineering consultancy — from
+          concept to commissioning of smart, safe, and sustainable facilities, backed by secure
+          remote team collaboration.
+        </p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-list">
+          <li><a href="https://teamdesk.vartexengg.com" target="_blank" rel="noopener noreferrer">Vartex TeamDesk Web App</a></li>
+          <li><a href="https://www.vartexengg.com" target="_blank" rel="noopener noreferrer">Vartex Engineering Home</a></li>
+          <li><a href="https://www.vartexengg.com/services.html" target="_blank" rel="noopener noreferrer">Services</a></li>
+          <li><a href="https://www.vartexengg.com/team.html" target="_blank" rel="noopener noreferrer">Leadership Team</a></li>
+          <li><a href="https://teamdesk.vartexengg.com/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Direct Contact</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 10.5L12 3l9 7.5" />
+              <path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" />
+              <path d="M9 21v-6h6v6" />
+            </svg>
+            <span>House-262, 1st Floor, West Shewrapara, Mannan Shoroni, Mirpur, Dhaka-1216</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:+8801932780370">+880 1932 780370</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a href="mailto:zillullah@vartexengg.com">zillullah@vartexengg.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Vartex Engineering. All rights reserved.</p>
+        <p>www.vartexengg.com &middot; Validating your vision — one system at a time.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var SOURCE_URL = "https://www.vartexengg.com/team.html";
+      var SYNC_SCOPE = "core4";
+      var CORE_PATTERNS = [/naeema/i, /zillullah/i, /shahriar|akramullah/i, /mahmud/i];
+
+      function selectMembers(list) {
+        if (!Array.isArray(list) || !list.length) return [];
+        if (SYNC_SCOPE === 'all') return list;
+        var picked = [];
+        for (var i = 0; i < CORE_PATTERNS.length; i++) {
+          var rx = CORE_PATTERNS[i];
+          for (var j = 0; j < list.length; j++) {
+            if (rx.test(list[j].name || '') && picked.indexOf(list[j]) === -1) {
+              picked.push(list[j]);
+              break;
+            }
+          }
+        }
+        return picked.length ? picked : list;
+      }
+
+      function renderTeamGrid(members) {
+        var grid = document.getElementById('team-grid');
+        if (!grid || !members.length) return;
+        grid.textContent = '';
+        for (var i = 0; i < members.length; i++) {
+          var m = members[i];
+          var card = document.createElement('article');
+          card.className = 'team-card';
+
+          var avatar = document.createElement('div');
+          avatar.className = 'avatar';
+          avatar.textContent = m.avatar || 'VE';
+
+          var body = document.createElement('div');
+          var h3 = document.createElement('h3');
+          h3.textContent = m.name || '';
+          var role = document.createElement('p');
+          role.className = 'team-role';
+          role.textContent = m.role || '';
+          var bio = document.createElement('p');
+          bio.className = 'team-bio';
+          bio.textContent = m.bio || '';
+
+          body.appendChild(h3);
+          body.appendChild(role);
+          body.appendChild(bio);
+          card.appendChild(avatar);
+          card.appendChild(body);
+          grid.appendChild(card);
+        }
+      }
+
+      function parseHtmlRoster(htmlText) {
+        var doc = new DOMParser().parseFromString(htmlText, 'text/html');
+        var nodes = doc.querySelectorAll('.team-card');
+        var list = [];
+        nodes.forEach(function (node) {
+          var h3 = node.querySelector('h3');
+          var av = node.querySelector('.avatar');
+          var role = node.querySelector('.role');
+          var ps = node.querySelectorAll('p');
+          var bioEl = ps.length > 1 ? ps[1] : null;
+          var name = h3 ? h3.textContent.trim() : '';
+          if (name) {
+            list.push({
+              avatar: av ? av.textContent.trim() : 'VE',
+              name: name,
+              role: role ? role.textContent.trim() : '',
+              bio: bioEl ? bioEl.textContent.trim() : ''
+            });
+          }
+        });
+        return list;
+      }
+
+      async function syncTeamFromMainSite() {
+        var isHttp = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+        if (!isHttp) return;
+
+        try {
+          var apiRes = await fetch('/api/vartex-team?source=' + encodeURIComponent(SOURCE_URL));
+          if (apiRes.ok) {
+            var data = await apiRes.json();
+            if (data && data.ok && Array.isArray(data.members) && data.members.length) {
+              var filtered = selectMembers(data.members);
+              renderTeamGrid(filtered);
+              return;
+            }
+          }
+        } catch (_err) {
+          // Fall through to direct CORS fetch if backend route is not installed
+        }
+
+        try {
+          var corsRes = await fetch(SOURCE_URL, { mode: 'cors' });
+          if (corsRes.ok) {
+            var htmlText = await corsRes.text();
+            var parsed = parseHtmlRoster(htmlText);
+            if (parsed.length) {
+              renderTeamGrid(selectMembers(parsed));
+            }
+          }
+        } catch (_err) {
+          // Keep pre-rendered snapshot silently if both live transports are unavailable
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncTeamFromMainSite);
+      } else {
+        syncTeamFromMainSite();
+      }
+    })();
+  </script>
+</body>
+</html>
