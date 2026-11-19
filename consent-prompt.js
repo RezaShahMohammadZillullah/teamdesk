@@ -15,7 +15,7 @@ export function requestHostControlConsent({ requesterId, onAllow, onDecline }) {
       <h3 style="margin:0 0 8px;font-size:17px;color:#0f172a;">Allow Remote Control?</h3>
       <p style="margin:0 0 18px;font-size:14px;line-height:1.5;color:#475569;">
         Peer <strong>${String(requesterId || 'Team Member')}</strong> is requesting permission to
-        view your screen and control your mouse and keyboard via TeamDesk.
+        view your screen and control your mouse and keyboard via Vartex TeamDesk.
       </p>
       <div style="display:flex;gap:10px;justify-content:flex-end;">
         <button id="td-decline-btn" style="padding:9px 16px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;color:#334155;font-weight:600;cursor:pointer;">
