@@ -1,0 +1,6 @@
+{
+  "name": "TeamDesk",
+  "description": "Private WebRTC remote screen sharing, remote assistance, file transfer, and team collaboration workspace without commercial session limits.",
+  "requestFramePermissions": ["display-capture", "microphone"],
+  "majorCapabilities": []
+}
