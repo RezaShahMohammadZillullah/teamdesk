@@ -412,7 +412,7 @@ async function startServer(): Promise<void> {
       activeSessions: activeSessions.size,
     });
   });
-
+registerVartexTeamRoute(app);
   app.get('/api/ice-servers', (_req, res) => {
     const iceServers: RTCIceServer[] = [
       { urls: 'stun:stun.l.google.com:19302' },
