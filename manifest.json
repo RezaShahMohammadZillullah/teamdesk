@@ -1,21 +1,32 @@
 {
+  "id": "/",
   "name": "TeamDesk",
   "short_name": "TeamDesk",
-  "description": "TeamDesk Web Application",
+  "description": "TeamDesk collaborative workspace installed directly from Render without unsigned Windows executables.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0f172a",
+  "orientation": "any",
+  "theme_color": "#09122A",
+  "background_color": "#F8FAFC",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/pwa-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/pwa-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
