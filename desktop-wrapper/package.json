@@ -1,0 +1,35 @@
+{
+  "name": "vartex-teamdesk-desktop",
+  "version": "1.0.0",
+  "description": "Vartex TeamDesk collaborative workspace installed via Microsoft Store or HTTPS without unsigned executables.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:store": "electron-builder --win appx"
+  },
+  "build": {
+    "appId": "Zillullah.VartexTeamDesk",
+    "productName": "Vartex TeamDesk",
+    "win": {
+      "target": [
+        "appx"
+      ],
+      "icon": "assets/Square150x150Logo.png"
+    },
+    "appx": {
+      "applicationId": "VartexTeamDesk",
+      "identityName": "Zillullah.VartexTeamDesk",
+      "publisher": "CN=05C0D0AD-DD45-4A75-992C-90D7D86D1367",
+      "publisherDisplayName": "Zillullah",
+      "displayName": "Vartex TeamDesk",
+      "backgroundColor": "#09122A",
+      "languages": [
+        "en-US"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^25.1.8"
+  }
+}

@@ -5,16 +5,15 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <!-- Replace Publisher CN and Identity Name with the exact values assigned in Microsoft Partner Center -->
   <Identity
-    Name="VartexEngineering.VartexTeamDesk"
-    Publisher="CN=YOUR-PARTNER-CENTER-PUBLISHER-ID"
+    Name="Zillullah.VartexTeamDesk"
+    Publisher="CN=05C0D0AD-DD45-4A75-992C-90D7D86D1367"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
 
   <Properties>
     <DisplayName>Vartex TeamDesk</DisplayName>
-    <PublisherDisplayName>Vartex Engineering</PublisherDisplayName>
+    <PublisherDisplayName>Zillullah</PublisherDisplayName>
     <Logo>assets\StoreLogo.png</Logo>
   </Properties>
 
