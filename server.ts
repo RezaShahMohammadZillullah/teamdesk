@@ -12,7 +12,7 @@ import type {
   SavedContact,
   SessionHistoryEntry,
 } from './src/types/teamdesk.ts';
-import { registerVartexTeamRoute } from './server-routes/vartex-team-sync.ts';
+import { registerVartexTeamRoute } from './vartex-team-sync.ts';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 3000);
