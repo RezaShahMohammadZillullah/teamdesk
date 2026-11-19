@@ -1,5 +1,5 @@
 // Electron Main Process Template (desktop-wrapper/main.js)
-// Wraps TeamDesk (https://teamdesk.vartexengg.com) + automatically starts the local Desktop Agent
+// Wraps Vartex TeamDesk (https://teamdesk.vartexengg.com) + automatically starts the local Desktop Agent
 // with a visible system tray icon and explicit Quit option (no PowerShell needed).
 
 const { app, BrowserWindow, Tray, Menu, desktopCapturer, session } = require('electron');
@@ -12,7 +12,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 820,
-    title: 'TeamDesk',
+    title: 'Vartex TeamDesk',
     icon: path.join(__dirname, 'assets', 'Square150x150Logo.png'),
     webPreferences: {
       contextIsolation: true,
@@ -40,17 +40,17 @@ function createWindow() {
 function createTray() {
   tray = new Tray(path.join(__dirname, 'assets', 'Square44x44Logo.png'));
   const menu = Menu.buildFromTemplate([
-    { label: 'Open TeamDesk', click: () => mainWindow && mainWindow.show() },
+    { label: 'Open Vartex TeamDesk', click: () => mainWindow && mainWindow.show() },
     { type: 'separator' },
     {
-      label: 'Exit TeamDesk (Stop Agent)',
+      label: 'Exit Vartex TeamDesk (Stop Agent)',
       click: () => {
         app.isQuitting = true;
         app.quit();
       },
     },
   ]);
-  tray.setToolTip('TeamDesk — Remote Support');
+  tray.setToolTip('Vartex TeamDesk — Remote Support');
   tray.setContextMenu(menu);
   tray.on('double-click', () => mainWindow && mainWindow.show());
 }

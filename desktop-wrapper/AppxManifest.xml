@@ -7,13 +7,13 @@
 
   <!-- Replace Publisher CN and Identity Name with the exact values assigned in Microsoft Partner Center -->
   <Identity
-    Name="VartexEngineering.TeamDesk"
+    Name="VartexEngineering.VartexTeamDesk"
     Publisher="CN=YOUR-PARTNER-CENTER-PUBLISHER-ID"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
 
   <Properties>
-    <DisplayName>TeamDesk</DisplayName>
+    <DisplayName>Vartex TeamDesk</DisplayName>
     <PublisherDisplayName>Vartex Engineering</PublisherDisplayName>
     <Logo>assets\StoreLogo.png</Logo>
   </Properties>
@@ -28,12 +28,12 @@
 
   <Applications>
     <Application
-      Id="TeamDesk"
-      Executable="TeamDesk.exe"
+      Id="VartexTeamDesk"
+      Executable="VartexTeamDesk.exe"
       EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="TeamDesk"
-        Description="TeamDesk collaborative workspace installed directly from Render without unsigned Windows executables."
+        DisplayName="Vartex TeamDesk"
+        Description="Vartex TeamDesk collaborative workspace installed via Microsoft Store or HTTPS without unsigned executables."
         BackgroundColor="#09122A"
         Square150x150Logo="assets\Square150x150Logo.png"
         Square44x44Logo="assets\Square44x44Logo.png">
