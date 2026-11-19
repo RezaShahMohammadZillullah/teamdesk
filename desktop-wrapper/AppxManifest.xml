@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <!-- Replace Publisher CN and Identity Name with the exact values assigned in Microsoft Partner Center -->
+  <Identity
+    Name="VartexEngineering.TeamDesk"
+    Publisher="CN=YOUR-PARTNER-CENTER-PUBLISHER-ID"
+    Version="1.0.0.0"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>TeamDesk</DisplayName>
+    <PublisherDisplayName>Vartex Engineering</PublisherDisplayName>
+    <Logo>assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+
+  <Applications>
+    <Application
+      Id="TeamDesk"
+      Executable="TeamDesk.exe"
+      EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="TeamDesk"
+        Description="TeamDesk collaborative workspace installed directly from Render without unsigned Windows executables."
+        BackgroundColor="#09122A"
+        Square150x150Logo="assets\Square150x150Logo.png"
+        Square44x44Logo="assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="assets\Square150x150Logo.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <!-- Required for packaged Win32 desktop mouse/keyboard bridge -->
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
